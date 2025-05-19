@@ -1,14 +1,14 @@
-package com.springboot.test;
+package com.springboot.test.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
-public class ControllerImpl {
+@RequestMapping("/api")
+public class ControllerTest {
 
-	@RequestMapping(value = "test", method = RequestMethod.GET)
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	String test() {
 		String str = "Hello World!!!";
 		System.out.println(str);

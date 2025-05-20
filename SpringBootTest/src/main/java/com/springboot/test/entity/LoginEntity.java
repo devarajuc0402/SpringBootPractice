@@ -25,7 +25,7 @@ public class LoginEntity {
 	boolean passwordShow;
 	
 	@Column
-	String rememberPassword;
+	boolean rememberPassword;
 	
 	@Column
 	Date createdDate;
@@ -62,11 +62,11 @@ public class LoginEntity {
 		this.passwordShow = passwordShow;
 	}
 
-	public String getRememberPassword() {
+	public boolean getRememberPassword() {
 		return rememberPassword;
 	}
 
-	public void setRememberPassword(String rememberPassword) {
+	public void setRememberPassword(boolean rememberPassword) {
 		this.rememberPassword = rememberPassword;
 	}
 

@@ -19,8 +19,11 @@ public class LoginEntity {
 	String email;
 	
 	@Column
-	String password;
-	
+	String loginPassword;
+
+	@Column
+	String loginUserType;
+
 	@Column
 	boolean passwordShow;
 	
@@ -45,13 +48,21 @@ public class LoginEntity {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public String getPassword() {
-		return password;
+	
+	public String getLoginPassword() {
+		return loginPassword;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setLoginPassword(String loginPassword) {
+		this.loginPassword = loginPassword;
+	}
+
+	public String getLoginUserType() {
+		return loginUserType;
+	}
+
+	public void setLoginUserType(String loginUserType) {
+		this.loginUserType = loginUserType;
 	}
 
 	public boolean isPasswordShow() {

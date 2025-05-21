@@ -1,0 +1,33 @@
+package util;
+
+import com.springboot.test.entity.LoginEntity;
+
+import constants.Constant;
+
+public class Utility {
+
+	public static String checkUserPassword(LoginEntity request, LoginEntity loginUser) {
+		String email = request.getEmail();
+		String password = request.getLoginPassword();
+		String result = Constant.EMPTY;
+		
+		if(loginUser.getEmail().equalsIgnoreCase(email)) {
+			result = Constant.USER_FOUND;
+			System.out.println(result);
+			if(loginUser.getLoginPassword().equalsIgnoreCase(password)) {
+				result = Constant.PASS_MATCHED;
+				System.out.println(result);
+				return result;
+			} else {
+				result = Constant.PASS_NOT_MATCHED;
+				System.out.println(result);
+				return result;
+			}
+		} else {
+			result = Constant.USER_NOT_FOUND;
+			System.out.println(result);
+			return result;
+		}
+	}
+
+}

@@ -10,30 +10,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.test.entity.RegisterEntity;
-import com.springboot.test.service.RegisterService;
+import com.springboot.test.entity.LoginEntity;
+import com.springboot.test.response.CustomResponse;
+import com.springboot.test.service.LoginService;
 
 @RestController
-@RequestMapping("/api/register")
-public class RegisterController {
+@RequestMapping("/api/login")
+public class LoginController {
 	
 	@Autowired
-	RegisterService registerService;
+	LoginService loginService;
 	
-	
-	@RequestMapping(value = "/registerUser", method = RequestMethod.POST,
+	@RequestMapping(value = "/loginUser", method = RequestMethod.PUT,
 			consumes = MediaType.APPLICATION_JSON_VALUE,
 			produces = MediaType.APPLICATION_JSON_VALUE)
-	ResponseEntity<RegisterEntity> registerUser(@RequestBody RegisterEntity request) {
-		RegisterEntity response = registerService.registerUser(request);
+	ResponseEntity<CustomResponse> loginUser(@RequestBody LoginEntity request) {
+		CustomResponse response = loginService.loginUser(request);
 		return ResponseEntity.ok(response);
 	}
 	
-	@RequestMapping(value = "/getRegisterUsers", 
-			method = RequestMethod.GET,
+	@RequestMapping(value = "/getLoginUsers", method = RequestMethod.GET,
 			produces = MediaType.APPLICATION_JSON_VALUE)
-	ResponseEntity<List<RegisterEntity>> getRegisterUsers() {
-		List<RegisterEntity> response = registerService.getRegisterUsers();
+	ResponseEntity<List<LoginEntity>> getLoginUsers() {
+		List<LoginEntity> response = loginService.getLoginUsers();
 		return ResponseEntity.ok(response);
 	}
 

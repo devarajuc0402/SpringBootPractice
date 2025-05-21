@@ -13,6 +13,9 @@ public class LoginEntity {
 	
 	@Id
 	@Column(nullable = true)
+	Long id;
+	
+	@Column(nullable = true)
 	String userName;
 	
 	@Column
@@ -32,6 +35,14 @@ public class LoginEntity {
 	
 	@Column
 	Timestamp createdDate;
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getUserName() {
 		return userName;

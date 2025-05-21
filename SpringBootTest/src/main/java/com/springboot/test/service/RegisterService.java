@@ -15,9 +15,14 @@ public class RegisterService {
 	RegisterRepository registerRepository;
 
 	public List<RegisterEntity> getRegisterUsers() {
-		List<RegisterEntity> register = registerRepository.findAll();
-		System.out.println(register);
-		return register;
+		List<RegisterEntity> registerUsers = registerRepository.findAll();
+		System.out.println(registerUsers);
+		return registerUsers;
+	}
+
+	public RegisterEntity registerUser(RegisterEntity request) {
+		RegisterEntity response = registerRepository.save(request);
+		return response;
 	}
 	
 }

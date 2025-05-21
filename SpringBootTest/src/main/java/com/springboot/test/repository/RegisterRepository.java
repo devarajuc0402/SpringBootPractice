@@ -12,4 +12,7 @@ import com.springboot.test.entity.RegisterEntity;
 public interface RegisterRepository extends CrudRepository<RegisterEntity, Long> {
 
 	List<RegisterEntity> findAll();
+	
+	@SuppressWarnings("unchecked")
+	RegisterEntity save(RegisterEntity request);
 }

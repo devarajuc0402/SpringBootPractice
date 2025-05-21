@@ -3,43 +3,49 @@ package com.springboot.test.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.test.entity.LoginEntity;
+import com.springboot.test.entity.LogoutEntity;
 import com.springboot.test.entity.RegisterEntity;
 import com.springboot.test.repository.LoginRepository;
 import com.springboot.test.repository.RegisterRepository;
+import com.springboot.test.service.LoginService;
+import com.springboot.test.service.LogoutService;
+import com.springboot.test.service.RegisterService;
 
 @RestController
 @RequestMapping("/api")
 public class ControllerTest {
-
-	@Autowired
-	RegisterRepository registerRepository;
 	
 	@Autowired
-	LoginRepository loginRepository;
+	RegisterService registerService;
 	
-	@RequestMapping(value = "/getRegisterUsers", method = RequestMethod.GET)
+	@Autowired
+	LoginService loginService;
+	
+	@Autowired
+	LogoutService logoutService;
+	
+	@RequestMapping(value = "/getRegisterUsers", method = RequestMethod.GET,
+			produces = MediaType.APPLICATION_JSON_VALUE)
 	List<RegisterEntity> getRegisterUsers() {
-		List<RegisterEntity> register = registerRepository.findAll();
-		System.out.println(register);
-		return register;
+		return registerService.getRegisterUsers();
 	}
 	
-	@RequestMapping(value = "/getLoginUsers", method = RequestMethod.GET)
+	@RequestMapping(value = "/getLoginUsers", method = RequestMethod.GET,
+			produces = MediaType.APPLICATION_JSON_VALUE)
 	List<LoginEntity> getLoginUsers() {
-		List<LoginEntity> list = loginRepository.findAll();
-		System.out.println(list);
-		return list;
+		return loginService.getLoginUsers();
 	}
 	
-	@RequestMapping(value = "/test", method = RequestMethod.GET)
-	String test() {
-		String str = "Hello World!!!";
-		System.out.println(str);
-		return str;
+	@RequestMapping(value = "/getLogoutUsers", method = RequestMethod.GET,
+			produces = MediaType.APPLICATION_JSON_VALUE)
+	List<LogoutEntity> getLogoutUsers() {
+		return logoutService.getLogoutUsers();
 	}
+
 }

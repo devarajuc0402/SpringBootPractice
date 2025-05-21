@@ -1,6 +1,6 @@
 package com.springboot.test.entity;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,7 +37,7 @@ public class RegisterEntity {
 	boolean rememberPassword;
 	
 	@Column
-	Date createdDate;
+	Timestamp createdDate;
 
 	public String getUserName() {
 		return userName;
@@ -103,11 +103,11 @@ public class RegisterEntity {
 		this.rememberPassword = rememberPassword;
 	}
 
-	public Date getCreatedDate() {
+	public Timestamp getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(Date createdDate) {
+	public void setCreatedDate(Timestamp createdDate) {
 		this.createdDate = createdDate;
 	}
 

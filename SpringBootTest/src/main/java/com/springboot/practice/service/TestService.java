@@ -1,4 +1,4 @@
-package com.springboot.test.service;
+package com.springboot.practice.service;
 
 import org.springframework.stereotype.Service;
 

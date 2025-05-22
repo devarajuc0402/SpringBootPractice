@@ -1,8 +1,7 @@
-package util;
+package com.springboot.practice.util;
 
-import com.springboot.test.entity.LoginEntity;
-
-import constants.Constant;
+import com.springboot.practice.constants.Constant;
+import com.springboot.practice.entity.LoginEntity;
 
 public class Utility {
 

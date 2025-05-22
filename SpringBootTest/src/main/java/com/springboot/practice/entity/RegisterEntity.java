@@ -1,4 +1,4 @@
-package com.springboot.test.entity;
+package com.springboot.practice.entity;
 
 import java.sql.Timestamp;
 
@@ -8,13 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "LOGIN")
-public class LoginEntity {
+@Table(name = "REGISTER")
+public class RegisterEntity {
 	
 	@Id
-	@Column(nullable = true)
-	Long id;
-	
 	@Column(nullable = true)
 	String userName;
 	
@@ -22,10 +19,16 @@ public class LoginEntity {
 	String email;
 	
 	@Column
-	String loginPassword;
-
+	String firstName;
+	
+	@Column
+	String lastName;
+	
 	@Column
 	String loginUserType;
+	
+	@Column
+	String loginPassword;
 
 	@Column
 	boolean passwordShow;
@@ -35,14 +38,6 @@ public class LoginEntity {
 	
 	@Column
 	Timestamp createdDate;
-	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getUserName() {
 		return userName;
@@ -59,13 +54,21 @@ public class LoginEntity {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public String getLoginPassword() {
-		return loginPassword;
+
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setLoginPassword(String loginPassword) {
-		this.loginPassword = loginPassword;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getLoginUserType() {
@@ -76,6 +79,14 @@ public class LoginEntity {
 		this.loginUserType = loginUserType;
 	}
 
+	public String getLoginPassword() {
+		return loginPassword;
+	}
+
+	public void setLoginPassword(String loginPassword) {
+		this.loginPassword = loginPassword;
+	}
+
 	public boolean isPasswordShow() {
 		return passwordShow;
 	}
@@ -84,7 +95,7 @@ public class LoginEntity {
 		this.passwordShow = passwordShow;
 	}
 
-	public boolean getRememberPassword() {
+	public boolean isRememberPassword() {
 		return rememberPassword;
 	}
 

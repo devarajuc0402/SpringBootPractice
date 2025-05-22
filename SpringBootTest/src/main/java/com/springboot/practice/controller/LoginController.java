@@ -1,4 +1,4 @@
-package com.springboot.test.controller;
+package com.springboot.practice.controller;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.test.entity.LoginEntity;
-import com.springboot.test.response.CustomResponse;
-import com.springboot.test.service.LoginService;
+import com.springboot.practice.entity.LoginEntity;
+import com.springboot.practice.response.CustomResponse;
+import com.springboot.practice.service.LoginService;
 
 @RestController
 @RequestMapping("/api/login")

@@ -1,4 +1,4 @@
-package com.springboot.test.service;
+package com.springboot.practice.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,12 +6,11 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.springboot.test.entity.LoginEntity;
-import com.springboot.test.repository.LoginRepository;
-import com.springboot.test.response.CustomResponse;
-
-import constants.Constant;
-import util.Utility;
+import com.springboot.practice.constants.Constant;
+import com.springboot.practice.entity.LoginEntity;
+import com.springboot.practice.repository.LoginRepository;
+import com.springboot.practice.response.CustomResponse;
+import com.springboot.practice.util.Utility;
 
 @Service
 public class LoginService {

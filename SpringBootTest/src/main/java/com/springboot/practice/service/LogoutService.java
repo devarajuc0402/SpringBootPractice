@@ -1,12 +1,12 @@
-package com.springboot.test.service;
+package com.springboot.practice.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.springboot.test.entity.LogoutEntity;
-import com.springboot.test.repository.LogoutRepository;
+import com.springboot.practice.entity.LogoutEntity;
+import com.springboot.practice.repository.LogoutRepository;
 
 @Service
 public class LogoutService {

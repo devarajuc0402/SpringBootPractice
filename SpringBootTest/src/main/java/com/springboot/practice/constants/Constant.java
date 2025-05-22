@@ -1,4 +1,4 @@
-package constants;
+package com.springboot.practice.constants;
 
 public class Constant {
 

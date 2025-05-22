@@ -1,12 +1,12 @@
-package com.springboot.test.service;
+package com.springboot.practice.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.springboot.test.entity.RegisterEntity;
-import com.springboot.test.repository.RegisterRepository;
+import com.springboot.practice.entity.RegisterEntity;
+import com.springboot.practice.repository.RegisterRepository;
 
 @Service
 public class RegisterService {

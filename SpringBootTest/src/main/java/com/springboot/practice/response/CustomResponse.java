@@ -1,9 +1,9 @@
-package com.springboot.test.response;
+package com.springboot.practice.response;
 
 public class CustomResponse {
 
-	String reponseName;
-	String payload;
+	private String reponseName;
+	private String payload;
 	
 	public String getReponseName() {
 		return reponseName;

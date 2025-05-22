@@ -1,4 +1,4 @@
-package com.springboot.test.controller;
+package com.springboot.practice.controller;
 
 import java.util.List;
 
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.test.entity.LoginEntity;
-import com.springboot.test.entity.LogoutEntity;
-import com.springboot.test.service.LoginService;
-import com.springboot.test.service.LogoutService;
+import com.springboot.practice.entity.LoginEntity;
+import com.springboot.practice.entity.LogoutEntity;
+import com.springboot.practice.service.LoginService;
+import com.springboot.practice.service.LogoutService;
 
 @RestController
 @RequestMapping("/api")

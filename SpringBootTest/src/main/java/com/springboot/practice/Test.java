@@ -1,4 +1,4 @@
-package com.springboot.test;
+package com.springboot.practice;
 
 public class Test {
 

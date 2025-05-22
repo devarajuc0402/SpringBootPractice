@@ -1,11 +1,11 @@
-package com.springboot.test.repository;
+package com.springboot.practice.repository;
 
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.springboot.test.entity.RegisterEntity;
+import com.springboot.practice.entity.RegisterEntity;
 
 
 @Repository

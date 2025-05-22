@@ -1,4 +1,4 @@
-package com.springboot.test.repository;
+package com.springboot.practice.repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.springboot.test.entity.LoginEntity;
+import com.springboot.practice.entity.LoginEntity;
 
 @Repository
 public interface LoginRepository extends CrudRepository<LoginEntity, Long> {

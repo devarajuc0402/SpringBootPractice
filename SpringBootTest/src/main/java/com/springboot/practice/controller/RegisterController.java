@@ -1,4 +1,4 @@
-package com.springboot.test.controller;
+package com.springboot.practice.controller;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.test.entity.RegisterEntity;
-import com.springboot.test.service.RegisterService;
+import com.springboot.practice.entity.RegisterEntity;
+import com.springboot.practice.service.RegisterService;
 
 @RestController
 @RequestMapping("/api/register")

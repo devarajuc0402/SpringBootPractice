@@ -25,14 +25,6 @@ public class ControllerTest {
 
 //============================================================================
 
-//	@RequestMapping(value = "/getLoginUsers", method = RequestMethod.GET,
-//			produces = MediaType.APPLICATION_JSON_VALUE)
-//	List<LoginEntity> getLoginUsers() {
-//		return loginService.getLoginUsers();
-//	}
-
-//============================================================================
-	
 //	@RequestMapping(value = "/getLogoutUsers", method = RequestMethod.GET,
 //			produces = MediaType.APPLICATION_JSON_VALUE)
 //	List<LogoutEntity> getLogoutUsers() {

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.practice.entity.LoginEntity;
+import com.springboot.practice.entity.RegisterEntity;
 import com.springboot.practice.response.CustomResponse;
 import com.springboot.practice.service.LoginService;
 
@@ -24,7 +25,7 @@ public class LoginController {
 	@RequestMapping(value = "/loginUser", method = RequestMethod.PUT,
 			consumes = MediaType.APPLICATION_JSON_VALUE,
 			produces = MediaType.APPLICATION_JSON_VALUE)
-	ResponseEntity<CustomResponse> loginUser(@RequestBody LoginEntity request) {
+	ResponseEntity<CustomResponse> loginUser(@RequestBody RegisterEntity request) {
 		CustomResponse response = loginService.loginUser(request);
 		return ResponseEntity.ok(response);
 	}

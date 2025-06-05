@@ -1,11 +1,11 @@
 package com.springboot.practice.util;
 
 import com.springboot.practice.constants.Constant;
-import com.springboot.practice.entity.LoginEntity;
+import com.springboot.practice.entity.RegisterEntity;
 
 public class Utility {
 
-	public static String checkUserPassword(LoginEntity request, LoginEntity loginUser) {
+	public static String checkUserPassword(RegisterEntity request, RegisterEntity loginUser) {
 		String email = request.getEmail();
 		String password = request.getLoginPassword();
 		String result = Constant.EMPTY;

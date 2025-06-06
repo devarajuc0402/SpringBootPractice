@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,8 @@ import com.springboot.practice.util.Utility;
 @Service
 public class LoginService {
 
+	private static final Logger log = LoggerFactory.getLogger(LoginService.class);
+	
 	public Optional<RegisterEntity> registerPayload = null;
 	
 	@Autowired
@@ -30,7 +34,7 @@ public class LoginService {
 	
 	public List<LoginEntity> getLoginUsers() {
 		List<LoginEntity> loginUsers = loginRepository.findAll();
-		System.out.println(loginUsers);
+		log.info(loginUsers.toString());
 		return loginUsers;
 	}
 	
@@ -39,6 +43,7 @@ public class LoginService {
 		CustomResponse customResponse = new CustomResponse();
 		try {
 			Thread.sleep(3000);
+			log.info("Login started...");
 			String validate = checkUserExist(request);
 			if(validate.contains(Constant.LOGGED_IN)) {
 				LoginEntity mapLogin = mapLoginEntity(registerPayload.get());
@@ -47,14 +52,16 @@ public class LoginService {
 			}
 			customResponse.setReponseName("Login");
 			customResponse.setPayload(validate);
-			System.out.println(validate);
+			log.info(validate);
 		} catch (InterruptedException e) {
 			customResponse.setReponseName("Login");
 			customResponse.setReponseName(e.toString());
+			log.error(customResponse.toString());
             Thread.currentThread().interrupt();
         } catch (Exception e) {
 			customResponse.setReponseName("Login");
 			customResponse.setReponseName(e.toString());
+			log.error(customResponse.toString());
 		}
 		return CompletableFuture.completedFuture(customResponse);
 	}

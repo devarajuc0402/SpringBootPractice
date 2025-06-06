@@ -18,11 +18,9 @@ public class CustomResponse {
 		this.payload = payload;
 	}
 
-	/*
 	@Override
 	public String toString() {
 		return "CustomResponse [reponseName=" + reponseName + ", payload=" + payload + "]";
 	}
-	*/
 	
 }

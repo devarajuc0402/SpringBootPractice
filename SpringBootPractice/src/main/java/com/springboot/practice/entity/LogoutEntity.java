@@ -19,10 +19,10 @@ public class LogoutEntity {
 	String email;
 	
 	@Column
-	String loginUserType;
+	String loginUserType = "viewer";
 	
 	@Column
-	Timestamp lastLoginDate;
+	Timestamp lastLoginDate = new Timestamp(System.currentTimeMillis());;
 
 	public String getUserName() {
 		return userName;

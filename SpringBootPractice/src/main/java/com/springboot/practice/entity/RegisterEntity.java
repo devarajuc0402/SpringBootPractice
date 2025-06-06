@@ -25,19 +25,19 @@ public class RegisterEntity {
 	String lastName;
 	
 	@Column
-	String loginUserType;
+	String loginUserType = "viewer";
 	
 	@Column
 	String loginPassword;
 
 	@Column
-	boolean passwordShow;
+	boolean passwordShow = false;
 	
 	@Column
-	boolean rememberPassword;
+	boolean rememberPassword = false;
 	
 	@Column
-	Timestamp createdDate;
+	Timestamp createdDate = new Timestamp(System.currentTimeMillis());
 
 	public String getUserName() {
 		return userName;

@@ -28,16 +28,16 @@ public class LoginEntity {
 	String loginPassword;
 
 	@Column
-	String loginUserType;
+	String loginUserType = "viewer";
 
 	@Column
-	boolean passwordShow;
+	boolean passwordShow = false;
 	
 	@Column
-	boolean rememberPassword;
+	boolean rememberPassword = false;
 	
 	@Column
-	Timestamp createdDate;
+	Timestamp createdDate = new Timestamp(System.currentTimeMillis());
 	
 	public Long getId() {
 		return id;

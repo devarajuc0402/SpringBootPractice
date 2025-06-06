@@ -56,4 +56,10 @@ public class LogoutEntity {
 		this.lastLoginDate = lastLoginDate;
 	}
 
+	@Override
+	public String toString() {
+		return "LogoutEntity [userName=" + userName + ", email=" + email + ", loginUserType=" + loginUserType
+				+ ", lastLoginDate=" + lastLoginDate + "]";
+	}
+
 }

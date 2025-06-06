@@ -103,4 +103,11 @@ public class LoginEntity {
 		this.createdDate = createdDate;
 	}
 
+	@Override
+	public String toString() {
+		return "LoginEntity [id=" + id + ", userName=" + userName + ", email=" + email + ", loginPassword="
+				+ loginPassword + ", loginUserType=" + loginUserType + ", passwordShow=" + passwordShow
+				+ ", rememberPassword=" + rememberPassword + ", createdDate=" + createdDate + "]";
+	}
+
 }

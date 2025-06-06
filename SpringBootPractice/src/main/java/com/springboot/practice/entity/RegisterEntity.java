@@ -111,4 +111,11 @@ public class RegisterEntity {
 		this.createdDate = createdDate;
 	}
 
+	@Override
+	public String toString() {
+		return "RegisterEntity [userName=" + userName + ", email=" + email + ", firstName=" + firstName + ", lastName="
+				+ lastName + ", loginUserType=" + loginUserType + ", loginPassword=" + loginPassword + ", passwordShow="
+				+ passwordShow + ", rememberPassword=" + rememberPassword + ", createdDate=" + createdDate + "]";
+	}
+
 }

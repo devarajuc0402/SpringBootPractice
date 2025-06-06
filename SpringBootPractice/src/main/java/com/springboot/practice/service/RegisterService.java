@@ -21,7 +21,12 @@ public class RegisterService {
 	}
 
 	public RegisterEntity registerUser(RegisterEntity request) {
-		RegisterEntity response = registerRepository.save(request);
+		RegisterEntity response = new RegisterEntity();
+		try {
+			response = registerRepository.save(request);	
+		} catch (Exception e) {
+			response.setEmail(request.getEmail()+"-"+e.toString());
+		}
 		return response;
 	}
 	

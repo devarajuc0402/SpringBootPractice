@@ -33,16 +33,21 @@ public class LoginService {
 	}
 	
 	public CustomResponse loginUser(RegisterEntity request) {
-		String validate = checkUserExist(request);
 		CustomResponse customResponse = new CustomResponse();
-		if(validate.contains(Constant.LOGGED_IN)) {
-			LoginEntity mapLogin = mapLoginEntity(registerPayload.get());
-			LoginEntity login = loginRepository.save(mapLogin);
-			validate = validate + login;
+		try {
+			String validate = checkUserExist(request);
+			if(validate.contains(Constant.LOGGED_IN)) {
+				LoginEntity mapLogin = mapLoginEntity(registerPayload.get());
+				LoginEntity login = loginRepository.save(mapLogin);
+				validate = validate + login;
+			}
+			customResponse.setReponseName("Login");
+			customResponse.setPayload(validate);
+			System.out.println(validate);
+		} catch (Exception e) {
+			customResponse.setReponseName("Login");
+			customResponse.setReponseName(e.toString());
 		}
-		customResponse.setReponseName("Login");
-		customResponse.setPayload(validate);
-		System.out.println(validate);
 		return customResponse;
 	}
 

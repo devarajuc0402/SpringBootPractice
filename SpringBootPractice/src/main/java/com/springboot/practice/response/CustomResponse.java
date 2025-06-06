@@ -17,5 +17,12 @@ public class CustomResponse {
 	public void setPayload(String payload) {
 		this.payload = payload;
 	}
+
+	/*
+	@Override
+	public String toString() {
+		return "CustomResponse [reponseName=" + reponseName + ", payload=" + payload + "]";
+	}
+	*/
 	
 }

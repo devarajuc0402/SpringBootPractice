@@ -5,12 +5,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
-import com.springboot.practice.constants.Constant;
 import com.springboot.practice.entity.LoginEntity;
 import com.springboot.practice.entity.LogoutEntity;
-import com.springboot.practice.entity.RegisterEntity;
 import com.springboot.practice.repository.LoginRepository;
 import com.springboot.practice.repository.LogoutRepository;
 import com.springboot.practice.response.CustomResponse;

@@ -2,12 +2,15 @@ package com.springboot.practice.util;
 
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 public class JwtUtil {
 
-	private static final String SECRET_KEY = "PASSWORD_SPRINGBOOT_PRACTICE";
+	@Value("${jwt.secret.key}")
+	static String SECRET_KEY;
 	
 	// Generate JWT token
 	public static String generateToken(String password) {

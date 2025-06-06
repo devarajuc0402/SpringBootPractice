@@ -3,8 +3,10 @@ package com.springboot.practice.service;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import com.springboot.practice.constants.Constant;
@@ -32,23 +34,29 @@ public class LoginService {
 		return loginUsers;
 	}
 	
-	public CustomResponse loginUser(RegisterEntity request) {
+	@Async
+	public CompletableFuture<CustomResponse> loginUser(RegisterEntity request) {
 		CustomResponse customResponse = new CustomResponse();
 		try {
+			Thread.sleep(3000);
 			String validate = checkUserExist(request);
 			if(validate.contains(Constant.LOGGED_IN)) {
 				LoginEntity mapLogin = mapLoginEntity(registerPayload.get());
 				LoginEntity login = loginRepository.save(mapLogin);
-				validate = validate + login;
+				validate = validate +" - "+ login;
 			}
 			customResponse.setReponseName("Login");
 			customResponse.setPayload(validate);
 			System.out.println(validate);
-		} catch (Exception e) {
+		} catch (InterruptedException e) {
+			customResponse.setReponseName("Login");
+			customResponse.setReponseName(e.toString());
+            Thread.currentThread().interrupt();
+        } catch (Exception e) {
 			customResponse.setReponseName("Login");
 			customResponse.setReponseName(e.toString());
 		}
-		return customResponse;
+		return CompletableFuture.completedFuture(customResponse);
 	}
 
 	private LoginEntity mapLoginEntity(RegisterEntity register) {

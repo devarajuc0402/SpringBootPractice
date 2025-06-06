@@ -20,7 +20,6 @@ public class RegisterController {
 	@Autowired
 	RegisterService registerService;
 	
-	
 	@RequestMapping(value = "/registerUser", method = RequestMethod.POST,
 			consumes = MediaType.APPLICATION_JSON_VALUE,
 			produces = MediaType.APPLICATION_JSON_VALUE)

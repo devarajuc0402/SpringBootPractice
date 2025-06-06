@@ -1,6 +1,7 @@
 package com.springboot.practice.controller;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -26,8 +27,16 @@ public class LoginController {
 			consumes = MediaType.APPLICATION_JSON_VALUE,
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	ResponseEntity<CustomResponse> loginUser(@RequestBody RegisterEntity request) {
-		CustomResponse response = loginService.loginUser(request);
-		return ResponseEntity.ok(response);
+		CustomResponse customResponse = new CustomResponse();
+		try {
+			CompletableFuture<CustomResponse> response = loginService.loginUser(request);
+			customResponse = response.get();
+			return ResponseEntity.ok(customResponse);
+		} catch (Exception e) {
+			customResponse.setReponseName("Login");
+			customResponse.setReponseName(e.toString());
+			return ResponseEntity.ok(customResponse);
+		}
 	}
 	
 	@RequestMapping(value = "/getLoginUsers", method = RequestMethod.GET,

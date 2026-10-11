@@ -19,10 +19,10 @@ public class LogoutEntity {
 	String email;
 	
 	@Column
-	String loginUserType;
+	String loginUserType = "viewer";
 	
 	@Column
-	Timestamp lastLoginDate;
+	Timestamp lastLoginDate = new Timestamp(System.currentTimeMillis());;
 
 	public String getUserName() {
 		return userName;
@@ -54,6 +54,12 @@ public class LogoutEntity {
 
 	public void setLastLoginDate(Timestamp lastLoginDate) {
 		this.lastLoginDate = lastLoginDate;
+	}
+
+	@Override
+	public String toString() {
+		return "LogoutEntity [userName=" + userName + ", email=" + email + ", loginUserType=" + loginUserType
+				+ ", lastLoginDate=" + lastLoginDate + "]";
 	}
 
 }

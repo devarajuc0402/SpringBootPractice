@@ -13,6 +13,9 @@ public interface LoginRepository extends CrudRepository<LoginEntity, Long> {
 
 	List<LoginEntity> findAll();
 
-	Optional<LoginEntity> findByEmail(String userName);
+	@SuppressWarnings("unchecked")
+	LoginEntity save(LoginEntity request);
+	
+	Optional<LoginEntity> findByEmail(String email);
 
 }

@@ -4,6 +4,8 @@ import java.sql.Timestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,7 +14,8 @@ import javax.persistence.Table;
 public class LoginEntity {
 	
 	@Id
-	@Column(nullable = true)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(columnDefinition = "serial", nullable = true)
 	Long id;
 	
 	@Column(nullable = true)
@@ -25,16 +28,16 @@ public class LoginEntity {
 	String loginPassword;
 
 	@Column
-	String loginUserType;
+	String loginUserType = "viewer";
 
 	@Column
-	boolean passwordShow;
+	boolean passwordShow = false;
 	
 	@Column
-	boolean rememberPassword;
+	boolean rememberPassword = false;
 	
 	@Column
-	Timestamp createdDate;
+	Timestamp createdDate = new Timestamp(System.currentTimeMillis());
 	
 	public Long getId() {
 		return id;
@@ -98,6 +101,13 @@ public class LoginEntity {
 
 	public void setCreatedDate(Timestamp createdDate) {
 		this.createdDate = createdDate;
+	}
+
+	@Override
+	public String toString() {
+		return "LoginEntity [id=" + id + ", userName=" + userName + ", email=" + email + ", loginPassword="
+				+ loginPassword + ", loginUserType=" + loginUserType + ", passwordShow=" + passwordShow
+				+ ", rememberPassword=" + rememberPassword + ", createdDate=" + createdDate + "]";
 	}
 
 }

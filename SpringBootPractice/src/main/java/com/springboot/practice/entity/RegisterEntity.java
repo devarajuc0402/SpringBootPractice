@@ -25,19 +25,19 @@ public class RegisterEntity {
 	String lastName;
 	
 	@Column
-	String loginUserType;
+	String loginUserType = "viewer";
 	
 	@Column
 	String loginPassword;
 
 	@Column
-	boolean passwordShow;
+	boolean passwordShow = false;
 	
 	@Column
-	boolean rememberPassword;
+	boolean rememberPassword = false;
 	
 	@Column
-	Timestamp createdDate;
+	Timestamp createdDate = new Timestamp(System.currentTimeMillis());
 
 	public String getUserName() {
 		return userName;
@@ -109,6 +109,13 @@ public class RegisterEntity {
 
 	public void setCreatedDate(Timestamp createdDate) {
 		this.createdDate = createdDate;
+	}
+
+	@Override
+	public String toString() {
+		return "RegisterEntity [userName=" + userName + ", email=" + email + ", firstName=" + firstName + ", lastName="
+				+ lastName + ", loginUserType=" + loginUserType + ", loginPassword=" + loginPassword + ", passwordShow="
+				+ passwordShow + ", rememberPassword=" + rememberPassword + ", createdDate=" + createdDate + "]";
 	}
 
 }
